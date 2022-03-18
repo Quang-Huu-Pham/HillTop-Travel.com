@@ -1,0 +1,64 @@
+.place {
+    $gap: 38px;
+    &-list {
+        margin-top: 80px;
+        @include flex($direction: row, $justify: space-between, $align: flex-start, $wrap: wrap);
+        margin-inline: calc(-1 * $gap);
+    }
+    &-item {
+        position: relative;
+        max-width: calc((100% / 3) - $gap*2);
+        text-align: left;
+        list-style-type: none;
+        margin-inline: $gap;
+        background: $white;
+        box-shadow: 0px 1px 3px rgb(0 0 0 / 10%);
+        border: 1px solid #e7e9ed;
+        padding-bottom: 20px;
+        margin-bottom: 38px;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: 0.3s;
+        &:hover {
+            box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
+            transform: translateY(-4px);
+        }
+        &__img {
+            width: 100%;
+            max-height: 193px;
+            overflow: hidden;
+            object-fit: cover;
+            margin-bottom: 30px;
+            cursor: pointer;
+            &:hover img {
+                // opacity: 0.8;
+                filter: saturate(2);
+                transform: scale(1.04);
+            }
+        }
+        &__icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 4px;
+            @include size($width: 40px);
+            background-color: $primary-color;
+        }
+        &__content {
+            padding: 0 15px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        &__caption {
+            font-size: 1.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+            user-select: none;
+        }
+        &__desc {
+            margin-top: 20px;
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+    }
+}

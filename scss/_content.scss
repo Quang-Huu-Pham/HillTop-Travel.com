@@ -1,0 +1,50 @@
+.content {
+    margin-top: calc($distance - 38px);
+    background: url("../img/luca-bravo-hFzIoD0F_i8-unsplash\ 1.jpg") top center / cover no-repeat;
+    height: 1000px;
+    padding: 100px 0 130px;
+    &-title {
+        margin-bottom: 200px;
+        text-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            width: 520px;
+            height: 1px;
+            background-color: $white;
+        }
+    }
+    $gap-content: 26px;
+    &-main {
+        @include flex($direction: row, $justify: space-between, );
+        margin-inline: calc(-1 * $gap-content);
+        &__trailer,
+        &__story {
+            max-width: calc(100% / 2);
+            margin-inline: $gap-content;
+            border-radius: 4px;
+            object-fit: cover;
+            position: relative;
+        }
+        &__trailer {
+            border: 2px solid $gray;
+            box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
+        }
+        &__story {
+            @include bg-blur;
+            padding: 20px 45px 45px;
+            max-height: 404px;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        &__paragraph {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: $white;
+            font-weight: 400;
+        }
+    }
+}

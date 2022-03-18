@@ -1,0 +1,157 @@
+.header {
+    position: relative;
+    background: url("../img/banner.jpg") top / cover no-repeat;
+    height: 1000px;
+    &-main {
+        position: relative;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // z-index: 1;
+        padding: 8px 0;
+        transition: all 0.4s linear;
+        & .container {
+            @include flex($direction: row, $justify: space-between, $align: flex-end, $wrap: nowrap);
+            &::after {
+                content: "";
+                @include size($width: 1160px, $height: 1px);
+                position: absolute;
+                bottom: 0;
+                background-color: $white;
+            }
+        }
+    }
+    &-logo {
+        cursor: pointer;
+        max-width: 260px;
+    }
+    &-menu {
+        display: inline-block;
+        &__item {
+            display: inline-block;
+            list-style-type: none;
+            margin-left: 25px;
+        }
+        &__link {
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 500;
+            color: $white;
+            transition: color ease 0.5s;
+            &:hover {
+                color: $gray;
+            }
+        }
+    }
+    &-content {
+        padding-top: 160px;
+        position: relative;
+        text-align: center;
+    }
+    &-intro {
+        color: $white;
+        font-size: 12rem;
+        font-weight: 700;
+        line-height: 145px;
+        user-select: none;
+        animation: slideUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &-desc {
+        font-size: 5rem;
+        line-height: 61px;
+        user-select: none;
+        font-weight: 700;
+        color: $white;
+        animation: slideUp 1.6s ease-in-out;
+    }
+    &-selector {
+        margin-top: 86px;
+        &__item {
+            @include size($width: 180px, $height: 66px);
+            @include blur;
+            display: inline-block;
+            margin-left: 22px;
+            padding: 4px 0;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            &--active {
+                @include bg-blur;
+                transition: 0.3s ease;
+                & i,
+                & a {
+                    color: $white;
+                }
+            }
+        }
+        &__icon {
+            display: block;
+            font-size: 2.4rem;
+            line-height: 30px;
+        }
+        &__link {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 33px;
+            color: $dark;
+            text-decoration: none;
+        }
+        &__tab {
+            display: none;
+            position: absolute;
+            transform: translateY(100%);
+            bottom: 0;
+            padding: 38px 50px 60px;
+            border-radius: 10px;
+            max-width: 1130px;
+            transition: 0.3s;
+            &.header-selector__item--active {
+                @include flex($direction: row, $justify: flex-start, $align: flex-end);
+            }
+        }
+        &__form {
+            margin-left: 20px;
+            list-style-type: none;
+            text-align: left;
+        }
+        &__label {
+            font-size: 1.8rem;
+            color: $white;
+            line-height: 22px;
+        }
+        &__input {
+            @include size($width: 220px, $height: 40px);
+            margin-top: 8px;
+            border: none;
+            outline: none;
+            padding: 0 8px;
+            font-weight: 600;
+        }
+    }
+    &-footer {
+        padding-block: 36px;
+        @include bg-blur;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        & .container {
+            @include flex($direction: row, $justify: space-between, $align: center);
+        }
+        &__statistical {
+            text-align: center;
+            @include flex($direction: row, $justify: flex-start, $align: center);
+        }
+        &__icon {
+            @include size($width: 28px);
+        }
+        &__desc {
+            font-size: 2.8rem;
+            line-height: 28px;
+            margin-left: 20px;
+        }
+    }
+}
+
+.input--number {
+    width: 100px;
+}

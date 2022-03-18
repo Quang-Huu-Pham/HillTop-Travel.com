@@ -1,0 +1,43 @@
+$gap-evaluate: 11px;
+.evaluate {
+    margin-top: calc($distance - 20px);
+    &-main {
+        @include flex($direction: row, $justify: space-between, $align: center);
+        margin-top: 60px;
+        margin-inline: calc(-1 * $gap-evaluate);
+        overflow: hidden;
+    }
+    &-slider {
+        @include flex($direction: row, $justify: space-between);
+        margin-inline: $gap-evaluate;
+        &__item {
+            background: #FFFFFF;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        &__img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        &__confide {
+            padding: 0 12px;
+        }
+        &__desc {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+        &__author {
+            font-size: 1.6rem;
+            font-weight: 500;
+            float: right;
+            margin-top: 8px;
+        }
+    }
+    &-img {
+        width: calc(100% / 2);
+        margin-inline: $gap-evaluate;
+        object-fit: cover;
+        transform: rotate(-60deg);
+    }
+}
